@@ -3,8 +3,13 @@
 require "functions.php";
 require "Database.php";
 
-$db = new Database();
-$posts = $db->query();
+$config = require("config.php");
+
+$db = new Database($config["database"]);
+$posts = $db->query("SELECT * FROM posts")->fetchAll(PDO::FETCH_ASSOC);
+/*$comments = $db->query("SELECT * FROM comments")->fetchAll(PDO::FETCH_ASSOC);
+$user = = $db->query("SELECT * FROM users WHERE user_id = $id")->fetch(PDO::FETCH_ASSOC);
+$db->query("INSERT INTO posts");*/
 
 echo "<ul>";
 foreach ($posts as $post) {
