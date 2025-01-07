@@ -13,10 +13,9 @@ class Database{
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); //19,2
     }
 
-    public function query($sql){
+    public function query($sql, $params){
         $statement = $this->pdo->prepare($sql);
-        $statement->execute();
-
+        $statement->execute($params);
         return $statement;
     }
 }

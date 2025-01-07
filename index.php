@@ -9,16 +9,22 @@ $config = require("config.php");
 
 echo "<h1>Blogs</h1>";
 $db = new Database($config["database"]);
-$posts = $db->query("SELECT * FROM posts")->fetchAll(PDO::FETCH_ASSOC);
+
 /*$comments = $db->query("SELECT * FROM comments")->fetchAll(PDO::FETCH_ASSOC);
 $user = = $db->query("SELECT * FROM users WHERE user_id = $id")->fetch(PDO::FETCH_ASSOC);
 $db->query("INSERT INTO posts");*/
 
+$sql = "SELECT * FROM posts";
+$params = [];
 if (isset($_GET["search_query"]) && $_GET["search_query"] !="") {
     // Meklēšanas loģika
-    dd("SELECT * FROM posts WHERE content LIKE '" . $_GET["search_query"] . "';");
-    $posts = $db->query("SELECT * FROM posts WHERE content LIKE " . $_GET["search_query"])->fetchAll();
+    // dd("SELECT * FROM posts WHERE content LIKE '%" . $_GET["search_query"] . "%';");
+    $search_query = "%" . $_GET["search_query"] . "%";
+    $sql .= " WHERE content LIKE :search_query;";
+    $params = ["search_query" => $search_query];
 }
+
+$posts = $db->query($sql, $params)->fetchAll();
 
 // Meklēšanas forma
 // POST - maina datu bāzē saturu
