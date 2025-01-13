@@ -1,0 +1,32 @@
+body {
+    background-color: #916bbf; /* Soft purple for a pleasant background */
+    color: #ffffff; /* White text for contrast */
+    margin: 20px;
+    font-family: Arial, sans-serif; /* Clean, standard font */
+}
+
+/* Navbar style */
+header ul {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+header ul li {
+    list-style: none;
+    padding: 8px 12px;
+    background-color: #f48fb1; /* Soft pink for the navbar items */
+    border-radius: 5px; /* Rounded corners */
+}
+header ul li:hover {
+    background-color: #ec407a; /* Slightly darker pink on hover */
+}
+
+/* Link style */
+a {
+    color: #ffd1dc; /* Light pink for links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
