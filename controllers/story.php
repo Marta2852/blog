@@ -1,5 +1,6 @@
 <?php
 
-$title = "❤️";
-$pageTitle = "Par mums";
+$title="WEBSITE";
+$pageTitle="About Us";
+
 require "views/story.view.php";

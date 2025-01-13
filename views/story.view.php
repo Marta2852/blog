@@ -10,13 +10,13 @@
   satricina <strong><?= $title?> </strong> - <strong>nākotnes blogu platforma</strong>!
 </p>
 <p>
-  <?=$title ?>ir blogošanas platforma, kas pilnībā mainījusi veidu, kā mēs blogojam un
+  <?=$title ?> ir blogošanas platforma, kas pilnībā mainījusi veidu, kā mēs blogojam un
   patērējam saturu. <?=$title?> ne tikai izceļas ar vizuāli pievilcīgu, modernu un lietotājam
   draudzīgu interfeisu, bet piedāvā arī inovatīvas funkcijas, kas pārspēj esošo konkurenci.
-  <?=$title?>ir vairāk nekā tikai blogošanas platforma - tā ir pilnīga kopiena.
+  <?=$title?> ir vairāk nekā tikai blogošanas platforma - tā ir pilnīga kopiena.
 </p>
 <p>
-  Pateicoties programmētāju talantam un neatlaidībai, <?=$title ?>ļoti īsā laikā kļuvusi
+  Pateicoties programmētāju talantam un neatlaidībai, <?=$title ?> ļoti īsā laikā kļuvusi
   par Latvijā vadošo blogošanas platformu. Lietotāju skaits strauji pieaug, jo cilvēki no
   visas Latvijas novērtē iespējas, ko piedāvā <?=$title?>, un platformas radīto ciešo saikni
   starp rakstniekiem un lasītājiem.
