@@ -3,12 +3,11 @@
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 $routes = require("routes.php");
 
-if ($uri == "/") {
-  require "controllers/index.php";
-} elseif ($uri == "/about") {
-  require "controllers/story.php";
+
+if (array_key_exists($uri, $routes)) {
+  require $routes[$uri];
 } else {
   http_response_code(404);
-  echo "<p>Atvainojiet, lapa nav atrasta!</p>";
+  require "controllers/404.php";
   die();
 }
