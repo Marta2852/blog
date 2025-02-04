@@ -3,14 +3,12 @@
 
 <h1>Blogs</h1>
 
-<form>
-  <input value='<?= htmlspecialchars($_GET["content"] ?? "") ?>' name='content' />
-  <button>Meklēt</button>
-</form>
-
 <ul>
   <?php foreach ($posts as $post) { ?>
-    <li><a href="show?id=<?= $post["id"] ?>"> <?= htmlspecialchars($post["content"]) ?> </a> </li>  <!-- htmlspecialchars applied here -->
+    <li>
+    <a href="show?id=<?= $post["id"] ?>"><?= htmlspecialchars($post["content"]) ?></a>
+
+    </li>
   <?php } ?>
 </ul>
 
