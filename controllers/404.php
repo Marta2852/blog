@@ -1,5 +1,6 @@
 <?php
-$pageTitle = "For ou for";
+
+$pageTitle = "For o for";
 require "views/404.view.php";
 
 ?>

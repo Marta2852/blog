@@ -1,4 +1,6 @@
-<?php require "components/header.php"?>
-<?php require "components/footer.php"?>
-<p>Page dosen't exist<p>
-<?php require "components/navbar.php"?>
+<?php require "components/header.php"; ?>
+<?php require "components/navbar.php"; ?>
+
+<h1>Lapa nav atrasta</h1>
+
+<?php require "components/footer.php"; ?>

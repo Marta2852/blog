@@ -1,8 +1,13 @@
+
+<link rel="stylesheet" type="text/css" href="css\styles.css">
+
 <header>
-  <nav>
+<nav>
     <ul>
-      <li><a href="/">Blogi</a></li>
-      <li><a href="about">Par mums</a></li>
+<li> <a href="/">Blogs</a> </li>
+<li> <a href="/about">About Us</a> </li>
+<li> <a href="/categories">Categories</a> </li>
+<li> <a href="/create">Create</a> </li>
     </ul>
-  </nav>
+</nav>
 </header>
