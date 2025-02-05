@@ -8,8 +8,14 @@
     <label>
         <p>Content:</p>
         
-        <textarea name="content" required></textarea>
+        <textarea name="content" required><?= htmlspecialchars($_POST["content"] ?? "") ?></textarea>
+        
     </label>
+
+    <?php if(isset($errors["content"])) { ?>
+       <p><?= $errors["content"] ?></p>
+     <?php } ?>
+
     <br>
     <br>
     <button type="submit">Submit</button>
