@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sql = "UPDATE posts SET content = :content WHERE id = :id";
         $db->query($sql, ["content" => $content, "id" => $postID]);
 
-        header("Location: /");
+        header("Location: show?id=" . $postID);
         exit();
     }
 }
