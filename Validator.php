@@ -16,6 +16,10 @@ class Validator{
             && $value >= $min
             && $value <= $max;
     }
+
+    
 }
+
+
 
 ?>
