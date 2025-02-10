@@ -9,8 +9,8 @@
     </button>
 </a>
 
-<form method="POST" action="/delete">
-  <input type="hidden" name="id" value="<?= $post["id"] ?>">
+<form action="/delete" method="POST">
+    <input type="hidden" name="id" value="<?= $post["id"] ?>"> <!-- The post ID to delete -->
   <button type="submit" style="background-color: #f48fb1; color: white; border: none; padding: 5px 10px; font-size: 12px; border-radius: 6px; cursor: pointer; margin: 5px">
     Delete
   </button>
