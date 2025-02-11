@@ -1,29 +1,23 @@
 <?php
 
-require "Validator.php";  // Assuming you have the Validator class
+require "Validator.php";  
 $config = require("config.php");
 $db = new Database($config["database"]);
 
-// Only proceed if the request method is POST (to prevent unauthorized access)
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $postID = $_POST["id"] ?? null;  // Retrieve the ID from the form submission
+// Make sure the ID is coming from the POST request
+$postID = $_POST["id"] ?? null;
 
-    // Validate that the ID is a number (using the Validator class)
-    if (!Validator::number($postID, 1)) {
-        // If the ID is invalid, redirect back to the main page
-        header("Location: /");
-        exit();
-    }
-
-    // SQL query to delete the post by ID
-    $sql = "DELETE FROM posts WHERE id = :id";
-    $db->query($sql, ["id" => $postID]);  // Execute the query
-
-    // Redirect to the main page after deleting the post
-    header("Location: /");
-    exit();
-} else {
-    // If it's a GET request, simply redirect to the main page to prevent unauthorized access
+// Validate the ID to ensure it's a valid number
+if (!Validator::number($postID, 1)) {
+    // If the ID is not valid, redirect to the home page or list of posts
     header("Location: /");
     exit();
 }
+
+// Prepare the SQL query to delete the post
+$sql = "DELETE FROM posts WHERE id = :id";
+$db->query($sql, ["id" => $postID]);  
+
+// Redirect to the main page (index) after deletion
+header("Location: /");  // Adjust this URL based on your routing (main page)
+exit();
