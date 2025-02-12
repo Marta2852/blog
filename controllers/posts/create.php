@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }
 
-    // Saglabā tikai tad, ja nav kļūdu
     if (empty($errors)) {
         $sql = "INSERT INTO posts (content) VALUES (:content)";
         $params = ["content" => $_POST["content"]];

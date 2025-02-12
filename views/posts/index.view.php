@@ -1,27 +1,43 @@
-<?php require "views/components/header.php" ?>
-<?php require "views/components/navbar.php" ?>
+<?php
+require "views/components/header.php";
+require "views/components/navbar.php";
 
-<!-- index.view.php -->
+// Handle the search query
+$searchQuery = $_GET['search_query'] ?? '';
+if (!empty($searchQuery)) {
+    $filteredPosts = array_filter($posts, function ($post) use ($searchQuery) {
+        return stripos($post['content'], $searchQuery) !== false;
+    });
+} else {
+    $filteredPosts = $posts; // No filtering if search query is empty
+}
+?>
 
 <h1>Blogs</h1>
 
-<!-- Search Form -->
-<form method="GET" action="index.php">
-  <input type="text" name="search_query" placeholder="Search..." value="<?= htmlspecialchars($_GET['search_query'] ?? '') ?>" class="search-input"/>
+<form method="GET">
+  <input type="text" name="search_query" placeholder="Search..." 
+         value="<?= htmlspecialchars($searchQuery) ?>" class="search-input" />
   <button type="submit" class="search-button">Search</button>
 </form>
 
-<?php if (isset($_GET['search_query']) && !empty($_GET['search_query'])): ?>
-  <h2>Search Results for "<?= htmlspecialchars($_GET['search_query']) ?>"</h2>
+<?php if (!empty($searchQuery)): ?>
+  <h2>Search Results for "<?= htmlspecialchars($searchQuery) ?>"</h2>
 <?php endif; ?>
 
 <ul>
-  <?php foreach ($posts as $post) { ?>
-    <li>
-      <a href="show?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['content']) ?></a>
-    </li>
+  <?php if (empty($filteredPosts)) { ?>
+    <p>No results found.</p>
+  <?php } else { ?>
+    <?php foreach ($filteredPosts as $post) { ?>
+      <li>
+        <a href="show?id=<?= $post['id'] ?>">
+          <?= htmlspecialchars($post['content']) ?>
+        </a>
+      </li>
+    <?php } ?>
   <?php } ?>
 </ul>
 
+<?php require "views/components/footer.php"; ?>
 
-<?php require "views/components/footer.php" ?>

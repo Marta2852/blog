@@ -31,8 +31,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
 /* Search Bar Styles */
 form {
     display: flex;
@@ -58,7 +56,6 @@ form {
     box-shadow: 0px 0px 8px rgba(236, 64, 122, 0.5);
 }
 
-/* Search Button */
 .search-button {
     padding: 10px 15px;
     background-color: #f48fb1; /* Soft pink */
@@ -73,4 +70,22 @@ form {
 
 .search-button:hover {
     background-color: #ec407a; /* Darker pink on hover */
+}
+
+/* Button Styles for Edit and Delete */
+button {
+    background-color: #f48fb1; /* Soft pink */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ec407a; /* Slightly darker pink on hover */
 }
